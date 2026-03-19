@@ -1,24 +1,34 @@
-steps:
+name: Deploy Blog
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      - name: Force Install Hexo and Theme
+      - name: Force Install Hexo
+        # 这里合并了安装步骤，确保即使没有 package-lock 也能跑
         run: |
           npm install -g hexo-cli
           npm install --no-audit --no-fund
 
       - name: Build Hexo
-        # 直接运行 hexo generate
         run: hexo generate
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.HEXO_DEPLOY_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           publish_branch: gh-pages
