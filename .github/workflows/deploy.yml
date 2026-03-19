@@ -1,14 +1,4 @@
-name: Deploy Blog
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
+steps:
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -16,13 +6,15 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '20'
-          cache: 'npm'
 
-      - name: Install Dependencies
-        run: npm install
+      - name: Force Install Hexo and Theme
+        run: |
+          npm install -g hexo-cli
+          npm install --no-audit --no-fund
 
       - name: Build Hexo
-        run: npx hexo generate
+        # 直接运行 hexo generate
+        run: hexo generate
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
