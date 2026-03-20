@@ -6,34 +6,33 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
+  build-and-deploy:        
+    runs-on: ubuntu-latest 
+    steps:                 
+      - name: Checkout     
         uses: actions/checkout@v4
         with:
-          submodules: true  # 确保子模块也能拉取成功
+          submodules: true
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
 
-     - name: Install pnpm
+      - name: Install pnpm
         uses: pnpm/action-setup@v3
         with:
-          version: 8  # 指定一个稳定的版本
+          version: 8
 
       - name: Install Dependencies
         run: pnpm install --no-frozen-lockfile --registry=https://registry.npmmirror.com
 
       - name: Build Hexo
-        run: npx hexo generate
+        run: pnpm exec hexo generate
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.HEXO_DEPLOY_KEY }}
           publish_dir: ./public
           publish_branch: gh-pages
