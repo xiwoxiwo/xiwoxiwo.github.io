@@ -20,8 +20,13 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
+     - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8  # 指定一个稳定的版本
+
       - name: Install Dependencies
-        run: npm install --registry=https://registry.npmjs.org
+        run: pnpm install --no-frozen-lockfile --registry=https://registry.npmmirror.com
 
       - name: Build Hexo
         run: npx hexo generate
