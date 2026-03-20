@@ -46,6 +46,11 @@
   resolved "http://test-verdaccio.haiwell.com/@csstools/css-tokenizer/-/css-tokenizer-3.0.4.tgz"
   integrity sha512-Vd/9EVDiu6PPJt9yAh6roZP6El1xHrdvIVGjyBsHR0RYwNHgL7FJPyIIW4fANJNG6FtyZfvlRPpFI4ZM/lubvw==
 
+"@types/trusted-types@^2.0.7":
+  version "2.0.7"
+  resolved "http://test-verdaccio.haiwell.com/@types/trusted-types/-/trusted-types-2.0.7.tgz"
+  integrity sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw==
+
 a-sync-waterfall@^1.0.0:
   version "1.0.1"
   resolved "http://test-verdaccio.haiwell.com/a-sync-waterfall/-/a-sync-waterfall-1.0.1.tgz"
@@ -791,7 +796,20 @@ hexo-util@^2.7.0:
     prismjs "^1.17.1"
     strip-indent "^3.0.0"
 
-hexo-util@^3.0.1, hexo-util@^3.1.0, hexo-util@^3.3.0:
+hexo-util@^3.0.1, hexo-util@^3.3.0:
+  version "3.3.0"
+  resolved "http://test-verdaccio.haiwell.com/hexo-util/-/hexo-util-3.3.0.tgz"
+  integrity sha512-YvGngXijE2muEh5L/VI4Fmjqb+/yAkmY+VuyhWVoRwQu1X7bmWodsfYRXX7CUYhi5LqsvH8FAe/yBW1+f6ZX4Q==
+  dependencies:
+    camel-case "^4.1.2"
+    cross-spawn "^7.0.3"
+    deepmerge "^4.2.2"
+    highlight.js "^11.6.0"
+    htmlparser2 "^9.0.0"
+    prismjs "^1.29.0"
+    strip-indent "^3.0.0"
+
+hexo-util@^3.1.0:
   version "3.3.0"
   resolved "http://test-verdaccio.haiwell.com/hexo-util/-/hexo-util-3.3.0.tgz"
   integrity sha512-YvGngXijE2muEh5L/VI4Fmjqb+/yAkmY+VuyhWVoRwQu1X7bmWodsfYRXX7CUYhi5LqsvH8FAe/yBW1+f6ZX4Q==
@@ -1170,7 +1188,7 @@ morgan@^1.9.1:
     on-finished "~2.3.0"
     on-headers "~1.1.0"
 
-ms@^2.1.3, ms@2.1.3:
+ms@^2.1.3:
   version "2.1.3"
   resolved "http://test-verdaccio.haiwell.com/ms/-/ms-2.1.3.tgz"
   integrity sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
@@ -1179,6 +1197,11 @@ ms@2.0.0:
   version "2.0.0"
   resolved "http://test-verdaccio.haiwell.com/ms/-/ms-2.0.0.tgz"
   integrity sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==
+
+ms@2.1.3:
+  version "2.1.3"
+  resolved "http://test-verdaccio.haiwell.com/ms/-/ms-2.1.3.tgz"
+  integrity sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
 
 nanoid@^3.3.7:
   version "3.3.11"
